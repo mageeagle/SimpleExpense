@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
+ </head>
 <body>
     <div class="container">
         <header>
             <h1>Receipt Tracker</h1>
-            <div class="total">Total: <span id="total-amount">0.00</span></div>
         </header>
         
         <main>
@@ -37,28 +35,9 @@
                     <button type="submit" class="btn-primary">Save Entry</button>
                 </form>
             </section>
-            
-            <section id="entries" class="entries-section">
-                <div class="section-header">
-                    <h2>Entries</h2>
-                    <button id="export-pdf" class="btn-secondary">Export PDF</button>
-                </div>
-                <div id="entries-list" class="entries-list">
-                    <p class="empty-state">No entries yet. Add your first expense above.</p>
-                </div>
-            </section>
         </main>
     </div>
     
     <script src="app.js"></script>
-    <div id="entry-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h2 id="modal-amount"></h2>
-            <p id="modal-description"></p>
-            <p id="modal-date"></p>
-            <img id="modal-image" class="modal-image" hidden>
-        </div>
-    </div>
 </body>
 </html>
