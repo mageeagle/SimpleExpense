@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Receipt Tracker</h1>
+            <div class="total">Total: <span id="total-amount">0.00</span></div>
+        </header>
+        
+        <main>
+            <section id="add-entry" class="form-section">
+                <h2>Add Entry</h2>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="What was this for?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-input">Receipt Image (optional)</label>
+                        <input type="file" id="image-input" accept="image/*" capture="environment">
+                    </div>
+                    <div id="image-preview" class="image-preview" hidden>
+                        <img id="preview-img" src="" alt="Preview">
+                        <button type="button" id="remove-image" class="btn-small">Remove</button>
+                    </div>
+                    <button type="submit" class="btn-primary">Save Entry</button>
+                </form>
+            </section>
+            
+            <section id="entries" class="entries-section">
+                <div class="section-header">
+                    <h2>Entries</h2>
+                    <button id="export-pdf" class="btn-secondary">Export PDF</button>
+                </div>
+                <div id="entries-list" class="entries-list">
+                    <p class="empty-state">No entries yet. Add your first expense above.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
