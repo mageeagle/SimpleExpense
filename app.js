@@ -14,10 +14,9 @@ function fileToBase64(file) {
 function generateFilename(entry) {
     const date = new Date(entry.timestamp);
     const dateStr = date.toISOString().split('T')[0].replace(/-/g, '_');
-    const timeStr = date.toTimeString().split(' ')[0].replace(/:/g, '');
     const desc = (entry.description || 'item').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
     const amount = entry.amount.toFixed(2).replace('.', '_');
-    return `${dateStr}_${timeStr}_${desc}_${amount}.jpg`;
+    return `${dateStr}_${desc}_${amount}.jpg`;
 }
 
 // Save photo to device using File System Access API or fallback download
